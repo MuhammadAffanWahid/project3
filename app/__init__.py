@@ -2,7 +2,8 @@ from flask import Flask
 from pymongo import MongoClient
 import os
 
-client = MongoClient(os.getenv("MONGO_URI", "mongodb://localhost:27017/"))
+DEFAULT_MONGO_URI = "mongodb+srv://affan:affan@deployment-test-cluster.rl1buzl.mongodb.net/?retryWrites=true&w=majority&appName=deployment-test-cluster"
+client = MongoClient(os.getenv("MONGO_URI", DEFAULT_MONGO_URI))
 db = client["userdb"]
 
 def create_app():
