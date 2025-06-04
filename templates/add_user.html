@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add User</title></head>
+<body>
+    <h1>Add User</h1>
+    <form method="POST">
+        Name: <input type="text" name="name" required><br>
+        Email: <input type="email" name="email" required><br>
+        <input type="submit" value="Add">
+    </form>
+    <a href="{{ url_for('main.index') }}">Back</a>
+</body>
+</html>
