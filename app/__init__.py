@@ -9,7 +9,7 @@ def create_app():
     app = Flask(__name__)
 
     # Connect to MongoDB using environment variable
-    mongo_url = os.getenv('MONGO_URI', DEFAULT_MONGO_URI)
+    mongo_url = os.getenv('MONGO_URI', 'mongodb://localhost:27017')
     client = MongoClient(mongo_url)
     app.db = client['flaskdb']
 
