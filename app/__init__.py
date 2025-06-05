@@ -11,7 +11,7 @@ def create_app():
 
     # Connect to MongoDB using environment variable
     mongo_url = os.getenv('MONGO_URI', DEFAULT_MONGO_URI)
-    client = MongoClient(mongo_url,tlsCAFile=certifi.where())
+    client = MongoClient(mongo_url,tls=True,tlsCAFile=certifi.where())
     app.db = client['flaskdb']
 
     app.register_blueprint(main)
